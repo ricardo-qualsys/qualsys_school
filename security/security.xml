@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<odoo>
+	<data>
+		<record id="admin_qualsys" model="res.groups">
+			<field name="name">Administrador de Qualsys School</field>
+			<field name="comment">Todos los permisos</field>
+		</record>
+
+		<record id="user_qualsys" model="res.groups">
+			<field name="name">Usuario de Qualsys School</field>
+			<field name="comment">Permisos restringidos</field>
+			<!-- Solo puede crear, modificar cursos y asistentes; asi como solo ver escuelas-->
+		</record>
+	</data>
+</odoo>
