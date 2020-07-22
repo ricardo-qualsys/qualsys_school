@@ -10,9 +10,7 @@ class QualsysCourses(models.Model):
 
 	@api.depends("attendees_ids")
 	def get_courses_attendees(self):
-		#_logger.info("--> Self: %s" % self)
 		for data in self:
-			#_logger.info("--> Info de Self: %s" % data)
 			data.attendees_number = len(data.attendees_ids)
 			
 	name = fields.Char(string = "Nombre",required=True)
