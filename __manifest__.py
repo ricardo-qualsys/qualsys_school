@@ -12,6 +12,10 @@
 		'views/qualsys_partner_views.xml',
 		'wizard/wizard_course_assign_view.xml',
 		'wizard/wizard_school_assign_view.xml',
+		'reports/qualsys_school_report.xml',
+		'reports/qualsys_school_template.xml',
+		'reports/qualsys_courses_report.xml',
+		'reports/qualsys_courses_template.xml',
 		'security/security.xml',
 		'security/ir.model.access.csv'
 	]

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding="utf-8"?>
+<odoo>
+	<template id = "qualsys_courses_template">
+		<t t-call = "web.html_container">
+        	<t t-foreach="docs" t-as="courses">
+			    <t t-call = "web.external_layout">
+					<div class="page">
+						<h2>Cursos</h2>
+						<hr></hr>
+						<div> 
+							<td>
+								<strong>Codigo: </strong>
+								<t t-esc="courses.code"/>
+							</td>
+							<p></p>
+							<td>
+								<strong>Nombre del curso: </strong>
+								<t t-esc="courses.name"/>
+							</td>
+							<p></p>
+						</div>
+						<p></p>
+						<p></p>
+						<div>
+							<td>
+								<strong>Fecha inicio: </strong>
+								<t t-raw="courses.start_date"/>
+							</td>
+							<p></p>
+							<td>
+								<strong>Fecha fin: </strong>
+								<t t-raw="courses.end_date"/>
+							</td>
+							<p></p>
+							<td>
+								<strong>Duracion: </strong>
+								<t t-raw="courses.duration"/>								
+							</td>
+							<p></p>
+						</div>
+						<p></p>
+						<p></p>						
+						<div>
+							<td>
+								<strong>Instructor: </strong>
+								<t t-raw="courses.teacher_id.name"/>
+							</td>
+							<p></p>
+							<td>
+								<strong>No. Asistentes: </strong>
+								<t t-raw="courses.attendees_number"/>
+							</td>
+							<p></p>							
+						</div>
+						<t t-if="courses.attendees_ids">					
+							<h3>Asistentes</h3>
+							<hr></hr>
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th><strong>Nombre</strong></th>
+										<th><strong>Edad</strong></th>
+									</tr>
+								</thead>
+								<body>
+									<tr t-foreach="courses.attendees_ids" t-as="attendees">										
+										<td><span t-raw="attendees.partner_id.name"/></td>
+										<td><span t-esc="attendees.age"/></td>
+										</tr>
+								</body>
+							</table>
+						</t>
+						<p style="page-break-after:always;"></p>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+</odoo>
